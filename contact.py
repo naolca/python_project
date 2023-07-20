@@ -87,3 +87,17 @@ class contactManager:
         if found_key:
             container.pop(index)
         return
+        
+    def displayContacts(self):
+         """
+        Retrieve all the contacts and their contact numbers stored in the contact manager.
+        
+        Returns:
+        List: A list of tuples containing the contact name and their respective contact number.
+        """
+        contacts = []
+        for container in self.hash_table:
+            for record in container:
+                name, contactNumber = record
+                contacts.append((name, contactNumber))
+        return contacts
